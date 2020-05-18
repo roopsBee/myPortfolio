@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
-import ListSubheader from '@material-ui/core/ListSubheader'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -28,26 +27,28 @@ const useStyles = makeStyles(theme => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
-}));
+}))
 
-const IndexPage = () => {
-
+const IndexPage = ({ location }) => {
   const classes = useStyles()
   const [features, setFeatures] = React.useState(true)
   const [info, setInfo] = React.useState(true)
+  console.log(location)
 
   function handleClick(id) {
-    switch(id) {
-      case "features":
+    switch (id) {
+      case 'features':
         setFeatures(!features)
-        break;
-      case "info":
+        break
+      case 'info':
         setInfo(!info)
         break
+      default:
+        return
     }
   }
 
-  return(
+  return (
     <Layout>
       <SEO title="Home" />
       <Grid container spacing={3} justify="center">
@@ -65,61 +66,72 @@ const IndexPage = () => {
         </Grid>
       </Grid>
       <Divider />
-      <List
-        component="nav"
-        className={classes.root}
-      >
-      <ListItem id="features" button onClick={() => handleClick("features")}>
-        <ListItemIcon>
-          <StarIcon />
-        </ListItemIcon>
-        <ListItemText primary="Features" />
-        {features ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={!features} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="Material UI Framework" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="Progressive Web App" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="SEO" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="Offline Support" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="Roboto Typeface (self hosted)" />
-          </ListItem>
-        </List>
-      </Collapse>
-      <ListItem button onClick={() => handleClick("info")}>
-        <ListItemIcon>
-          <InfoIcon />
-        </ListItemIcon>
-        <ListItemText primary="Info" />
-        {info ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={!info} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="Based on Gatsby Default Starter" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon><Done /></ListItemIcon>
-            <ListItemText primary="Uses Gatsby Material UI Plugin" />
-          </ListItem>
-        </List>
-      </Collapse>
-    </List>
+      <List component="nav" className={classes.root}>
+        <ListItem id="features" button onClick={() => handleClick('features')}>
+          <ListItemIcon>
+            <StarIcon />
+          </ListItemIcon>
+          <ListItemText primary="Features" />
+          {features ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={!features} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="Material UI Framework" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="Progressive Web App" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="SEO" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="Offline Support" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="Roboto Typeface (self hosted)" />
+            </ListItem>
+          </List>
+        </Collapse>
+        <ListItem button onClick={() => handleClick('info')}>
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="Info" />
+          {info ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={!info} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="Based on Gatsby Default Starter" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <Done />
+              </ListItemIcon>
+              <ListItemText primary="Uses Gatsby Material UI Plugin" />
+            </ListItem>
+          </List>
+        </Collapse>
+      </List>
     </Layout>
   )
 }
