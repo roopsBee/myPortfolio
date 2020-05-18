@@ -25,7 +25,8 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    background: 'linear-gradient(to right,  #663399, #5B72FF)',
+    background:
+      'linear-gradient(90deg, rgba(184,0,0,1) 0%, rgba(195,104,39,1) 52%, rgba(115,0,255,1) 100%)',
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -47,6 +48,8 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    background:
+      'linear-gradient(150deg, rgba(184,0,0,1) 0%, rgba(195,104,39,1) 85%)',
   },
   drawerHeader: {
     display: 'flex',
@@ -121,6 +124,7 @@ const Header = ({ siteTitle }) => {
           keepMounted: true, // Better open performance on mobile.
         }}
       >
+        <Toolbar />
         <DrawerItems
           classes={classes}
           handleListItemClick={handleDrawerToggle}
