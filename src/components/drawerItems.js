@@ -16,6 +16,18 @@ const DrawerItems = ({ handleListItemClick, classes }) => {
           Icon={HomeIcon}
           onClick={handleListItemClick}
         />
+        <DrawerItem
+          name="Portfolio"
+          to="/portfolio"
+          Icon={HomeIcon}
+          onClick={handleListItemClick}
+        />
+        <DrawerItem
+          name="Contact"
+          to="/contact"
+          Icon={HomeIcon}
+          onClick={handleListItemClick}
+        />
       </List>
     </div>
   )
