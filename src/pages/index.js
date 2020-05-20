@@ -1,4 +1,5 @@
 import React from 'react'
+import { Paper, Container } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
@@ -18,6 +19,7 @@ import InfoIcon from '@material-ui/icons/Info'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Done from '@material-ui/icons/Done'
+import PortfolioCard from '../components/portfolioCard'
 
 const useStyles = makeStyles(theme => ({}))
 
@@ -27,7 +29,19 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h4>home</h4>
+      <Container>
+        <Grid container justify="center" spacing={2}>
+          <Grid container item justify="center" xs={12} sm={6} md={4}>
+            <PortfolioCard />
+          </Grid>
+          <Grid container item justify="center" xs={12} sm={6} md={4}>
+            <PortfolioCard />
+          </Grid>
+          <Grid container item justify="center" xs={12} sm={6} md={4}>
+            <PortfolioCard />
+          </Grid>
+        </Grid>
+      </Container>
     </Layout>
   )
 }
