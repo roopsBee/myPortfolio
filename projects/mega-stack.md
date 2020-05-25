@@ -15,4 +15,5 @@ tech:
   - Node
   - Express
   - MongoDB
+Image: /img/cat-floof.jpg
 ---
