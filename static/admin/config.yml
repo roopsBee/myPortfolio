@@ -13,4 +13,5 @@ collections:
     fields:
       - { name: url, label: URL }
       - { name: title, label: Title }
-      - { name: summary, label: Summary, widget: markdown }
+      - { name: summary, label: Summary }
+      - { name: tech, label: Tech, widget: 'list' }
