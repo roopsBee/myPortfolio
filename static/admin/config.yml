@@ -21,3 +21,4 @@ collections:
           widget: 'list',
           hint: 'Comma seperated list',
         }
+      - { label: 'Image', name: 'Image', widget: 'image' }

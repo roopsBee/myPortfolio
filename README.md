@@ -1,8 +1,6 @@
 ### Todo
 
 2. pull portfolio projects from netlify cms
-   -make card component reusable
-   -create dummy data
    -pull data in from cms
 3. popper card to show more info
 4. create home page, animated with navigation options
