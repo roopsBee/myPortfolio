@@ -1,7 +1,6 @@
 ### Todo
 
 2. pull portfolio projects from netlify cms
-   -set required fields for cms
    -make card component reusable
    -create dummy data
    -pull data in from cms

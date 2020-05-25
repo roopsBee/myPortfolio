@@ -11,7 +11,13 @@ collections:
     folder: projects
     create: true
     fields:
-      - { name: url, label: URL }
       - { name: title, label: Title }
-      - { name: summary, label: Summary }
-      - { name: tech, label: Tech, widget: 'list' }
+      - { name: summary, label: Summary, widget: 'text' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+      - { name: url, label: URL }
+      - {
+          name: tech,
+          label: Tech List,
+          widget: 'list',
+          hint: 'Comma seperated list',
+        }
