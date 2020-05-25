@@ -25,36 +25,28 @@ const useStyles = makeStyles({
   img: { maxHeight: 300 },
 })
 
-export default function PortfolioCard() {
+export default function PortfolioCard({
+  fluidImage,
+  imageTitle,
+  title,
+  summary,
+}) {
   const classes = useStyles()
-
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "dogs.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Card className={classes.root}>
       <CardMedia
         className={classes.img}
         component={Img}
-        fluid={data.file.childImageSharp.fluid}
-        title="Floofy dogs"
+        fluid={fluidImage}
+        title={imageTitle}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          Lizard
+          {title}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {summary}
         </Typography>
       </CardContent>
       <CardActions>
