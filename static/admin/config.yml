@@ -13,7 +13,7 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: summary, label: Summary, widget: 'text' }
-      - { label: 'body', name: 'Body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
       - { name: url, label: URL }
       - {
           name: tech,
