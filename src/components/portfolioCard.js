@@ -4,17 +4,17 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import GithubButton from './githubButton/GithubButton'
 import CardMenuButton from './cardMenuButton'
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 375,
     minWidth: 275,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   button: {
     height: 40,
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
     paddingLeft: 22,
   },
   img: { maxHeight: 300 },
+  actions: { marginTop: 'auto' },
 })
 
 export default function PortfolioCard({
@@ -40,6 +41,7 @@ export default function PortfolioCard({
         component={Img}
         fluid={fluidImage}
         title={imageTitle}
+        alt="portfolio image"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
@@ -49,7 +51,7 @@ export default function PortfolioCard({
           {summary}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className={classes.actions}>
         <CardMenuButton />
       </CardActions>
     </Card>

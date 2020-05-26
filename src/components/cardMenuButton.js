@@ -61,7 +61,6 @@ export default function CardMenuButton() {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
       >
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
