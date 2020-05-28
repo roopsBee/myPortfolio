@@ -8,6 +8,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 import PortfolioCard from '../components/portfolioCard'
+import FlipCard from '../components/card/flipCard'
+import PortfolioCardBack from '../components/card/portfolioCardBack'
+import PortfolioCardFront from '../components/card/portfolioCardFront'
 
 const useStyles = makeStyles(theme => ({}))
 
@@ -22,6 +25,7 @@ const Portfolio = () => {
               summary
               tech
               title
+              description
               url
               Image {
                 childImageSharp {
@@ -37,16 +41,27 @@ const Portfolio = () => {
     }
   `)
   const portfolioCards = data.allMarkdownRemark.edges.map(edge => {
-    const { summary, title } = edge.node.frontmatter
+    const { summary, title, description, tech } = edge.node.frontmatter
     const image = edge.node.frontmatter.Image.childImageSharp.fluid
 
     return (
       <Grid key={title} container item justify="center" xs={12} sm={6} md={4}>
-        <PortfolioCard
-          fluidImage={image}
-          imageTitle={title}
-          title={title}
-          summary={summary}
+        <FlipCard
+          CardFront={
+            <PortfolioCardFront
+              fluidImage={image}
+              imageTitle={title}
+              title={title}
+              summary={summary}
+            />
+          }
+          CardBack={
+            <PortfolioCardBack
+              tech={tech}
+              description={description}
+              title={title}
+            />
+          }
         />
       </Grid>
     )
