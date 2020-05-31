@@ -6,9 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Img from 'gatsby-image'
-import { Paper } from '@material-ui/core'
 import CardMenuButton from './cardMenuButton'
-import useWindowSize from '../../hooks/useWindowSize'
 
 const useStyles = makeStyles({
   root: {
@@ -29,15 +27,18 @@ const useStyles = makeStyles({
   actions: { marginTop: 'auto' },
 })
 
-export default function PortfolioCard({
+export default function PortfolioCardFront({
   fluidImage,
   imageTitle,
   title,
   summary,
+  flipCard,
 }) {
   const classes = useStyles()
 
-  const handleInfoClick = event => {}
+  const handleInfoClick = event => {
+    flipCard()
+  }
 
   return (
     <Card className={classes.root}>

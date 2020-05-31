@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-import PortfolioCard from '../components/portfolioCard'
 import FlipCard from '../components/card/flipCard'
 import PortfolioCardBack from '../components/card/portfolioCardBack'
 import PortfolioCardFront from '../components/card/portfolioCardFront'

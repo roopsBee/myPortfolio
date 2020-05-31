@@ -28,14 +28,12 @@ const useStyles = makeStyles({
   },
   gitHubButton: {
     '& .MuiSvgIcon-root': {
-      fontSize: 45,
-      transform: 'translate(0,-1px)',
+      fontSize: 46,
     },
   },
   demoButton: {
     '& .MuiSvgIcon-root': {
       fontSize: 54,
-      transform: 'translate(0,-5px)',
     },
   },
   backButton: {
@@ -43,16 +41,26 @@ const useStyles = makeStyles({
       fontSize: 40,
     },
   },
-  actions: { marginTop: 'auto', padding: '0 16px 16px 16px' },
+  actions: { padding: '0 16px 16px 16px' },
   divider: { margin: '10px 0px' },
-  content: { paddingBottom: '0px' },
+  content: { paddingBottom: '0px', marginBottom: 'auto' },
+  tech: { padding: '0px 16px' },
 })
 
-export default function PortfolioCardBack({ tech, title, description }) {
+export default function PortfolioCardBack({
+  tech,
+  title,
+  description,
+  flipCard,
+}) {
   const classes = useStyles()
 
+  const handleBack = () => {
+    flipCard()
+  }
+
   const techList = tech.map(tech => (
-    <Grid item>
+    <Grid item key={tech}>
       <Chip label={tech} />
     </Grid>
   ))
@@ -66,6 +74,8 @@ export default function PortfolioCardBack({ tech, title, description }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {description}
         </Typography>
+      </CardContent>
+      <CardContent className={classes.tech}>
         <Divider variant="fullWidth" className={classes.divider} />
         <Grid container justify="space-between" spacing={1}>
           {techList}
@@ -76,6 +86,7 @@ export default function PortfolioCardBack({ tech, title, description }) {
         <Button
           variant="contained"
           className={clsx(classes.button, classes.backButton)}
+          onClick={handleBack}
         >
           <ArrowBackIcon />
         </Button>
