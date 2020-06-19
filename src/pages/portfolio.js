@@ -1,20 +1,16 @@
 import React from 'react'
 import { Container } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
-import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 import FlipCard from '../components/card/flipCard'
 import PortfolioCardBack from '../components/card/portfolioCardBack'
 import PortfolioCardFront from '../components/card/portfolioCardFront'
 
-const useStyles = makeStyles(theme => ({}))
-
 const Portfolio = () => {
-  const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {

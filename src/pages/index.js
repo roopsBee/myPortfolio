@@ -1,15 +1,17 @@
 import React from 'react'
-import { Container } from '@material-ui/core'
 
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
+import WelcomeScene from '../components/welcomeScene'
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <SEO title="Home" />
-      <Container>home</Container>
-    </Layout>
+    <>
+      <WelcomeScene />
+      <Layout>
+        <SEO title="Home" />
+      </Layout>
+    </>
   )
 }
 

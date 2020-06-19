@@ -10,7 +10,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from '@material-ui/styles'
 
 import Header from './header'
-import theme from '../themes/theme'
+import theme from '../../themes/theme'
 import Footer from './footer'
 import './layout.css'
 import { Toolbar } from '@material-ui/core'
