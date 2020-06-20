@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     background:
-      'linear-gradient(90deg, rgba(184,0,0,1) 0%, rgba(195,104,39,1) 52%, rgba(115,0,255,1) 100%)',
+      'linear-gradient(90deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.3) 51%, rgba(254,0,87,0.1) 100%)',
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
   drawerPaper: {
     width: drawerWidth,
     background:
-      'linear-gradient(150deg, rgba(184,0,0,1) 0%, rgba(195,104,39,1) 85%)',
+      'linear-gradient(150deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.2) 85%)',
   },
   drawerHeader: {
     display: 'flex',

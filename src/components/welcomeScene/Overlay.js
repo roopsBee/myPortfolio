@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CheckedIcon from '@material-ui/icons/RadioButtonChecked'
 import { makeStyles, Container, Button, Grid } from '@material-ui/core'
+import { a, useSpring } from 'react-spring'
 
 const useStyles = makeStyles({
   root: {
@@ -8,15 +10,56 @@ const useStyles = makeStyles({
     width: '100%',
   },
   menu: {
-    marginTop: '70vh',
+    marginTop: '60vh',
   },
   button: {
     backgroundColor: 'rgba(0,0,0,0.7)',
   },
+  iconButton: {
+    borderRadius: '25px',
+    borderWidth: 3,
+    minWidth: 0,
+    transformOrigin: 'center',
+    width: 0,
+    '&:hover': {
+      borderWidth: 3,
+    },
+    '& .MuiButton-startIcon': {
+      margin: 0,
+    },
+  },
+  iconButtonContainer: {
+    marginTop: '10vh',
+  },
 })
 
-const Overlay = ({ handleClick }) => {
+const Overlay = ({ handleClick, toggle }) => {
   const classes = useStyles()
+
+  const { transform } = useSpring({
+    from: { transform: 'scale(1)' },
+    to: async next => {
+      while (1) {
+        await next({ transform: 'scale(1.1)' })
+        await next({ transform: 'scale(1)' })
+      }
+    },
+    config: {
+      tension: 80,
+      friction: 15,
+      clamp: true,
+      velocity: 0,
+    },
+    reset: true,
+  })
+
+  const styles = useSpring({
+    opacity: toggle ? 1 : 0,
+    transform: toggle ? 'rotateY(0deg)' : 'rotateY(90deg)',
+  })
+
+  const AGrid = a(Grid)
+
   return (
     <div className={classes.root}>
       <Container>
@@ -26,18 +69,18 @@ const Overlay = ({ handleClick }) => {
           direction="column"
           alignItems="center"
         >
-          <Grid container item xs={6} sm={4} md={3}>
+          {/* <a.div  */}
+          <AGrid style={styles} container item xs={6} sm={4} md={3}>
             <Button
               className={classes.button}
               fullWidth
               variant="outlined"
               color="secondary"
-              onClick={handleClick}
             >
               Menu
             </Button>
-          </Grid>
-          <Grid container item xs={6} sm={4} md={3}>
+          </AGrid>
+          <AGrid style={styles} container item xs={6} sm={4} md={3}>
             <Button
               className={classes.button}
               fullWidth
@@ -46,6 +89,21 @@ const Overlay = ({ handleClick }) => {
             >
               Hello
             </Button>
+          </AGrid>
+          <Grid>
+            <a.div
+              style={{ transform }}
+              className={classes.iconButtonContainer}
+            >
+              <Button
+                size="large"
+                className={classes.iconButton}
+                startIcon={<CheckedIcon />}
+                variant="outlined"
+                color="secondary"
+                onClick={handleClick}
+              />
+            </a.div>
           </Grid>
         </Grid>
       </Container>

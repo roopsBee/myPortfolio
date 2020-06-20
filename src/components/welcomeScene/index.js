@@ -24,7 +24,7 @@ const Index = () => {
 
   return (
     <>
-      <Overlay handleClick={handleClick} />
+      <Overlay handleClick={handleClick} toggle={toggle} />
       <Canvas className={classes.root}>
         <ambientLight intensity={0.3} />
         <OrbitLight position={[-24, 2, 0]} speed={0.02} rotation={[0, 0, 0]} />

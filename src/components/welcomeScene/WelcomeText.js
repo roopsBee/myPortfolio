@@ -36,7 +36,7 @@ const WelcomeText = ({ toggle }) => {
 
   return (
     <group>
-      <mesh ref={text} position={[-3.3, 2, 0]}>
+      <mesh ref={text} position={[-3.3, 1, 0]}>
         <textBufferGeometry attach="geometry" args={['WELCOME', config]} />
         <a.meshPhongMaterial
           transparent

@@ -8,4 +8,4 @@ create index page
 
 - add animation to navigation menu
 - add navigation menu
-- add button to rotate scene
+- adjust drawer items opacity and color, for secondary and primary color in theme
