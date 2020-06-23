@@ -1,9 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
@@ -28,7 +22,7 @@ const Layout = ({ children }) => {
         }
       `}
       render={data => (
-        <div style={{ minHeight: '100vh', backgroundColor: '#FFF' }}>
+        <div style={{ minHeight: '100vh', backgroundColor: 'black' }}>
           <ThemeProvider theme={theme}>
             <Header siteTitle={data.site.siteMetadata.title} />
             <Toolbar />

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
-import WelcomeScene from '../components/welcomeScene'
+import WelcomeScene from '../components/welcomeScene/index'
 
 const IndexPage = () => {
   return (

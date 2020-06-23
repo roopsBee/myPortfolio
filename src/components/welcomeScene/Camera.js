@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { a, useSpring } from 'react-spring/three'
 import useResponsiveValue from '../../hooks/useResponsiveValue'
 import { useThree } from 'react-three-fiber'
@@ -38,15 +38,17 @@ const Camera = ({ toggle, ...props }) => {
   }, [])
 
   return (
-    <a.group ref={group} rotation-y={angle}>
-      <PerspectiveCamera
-        {...props}
-        makeDefault
-        zoom={responsiveZoom}
-        position={[0, 0, 10]}
-        rotation={[Math.PI / 20, 0, 0]}
-      />
-    </a.group>
+    <>
+      <a.group ref={group} rotation-y={angle}>
+        <PerspectiveCamera
+          {...props}
+          makeDefault
+          zoom={responsiveZoom}
+          position={[0, 0, 10]}
+          rotation={[Math.PI / 20, 0, 0]}
+        />
+      </a.group>
+    </>
   )
 }
 

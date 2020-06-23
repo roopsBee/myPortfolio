@@ -1,10 +1,8 @@
 import React from 'react'
-import { Container } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
-
-import Grid from '@material-ui/core/Grid'
 
 import FlipCard from '../components/card/flipCard'
 import PortfolioCardBack from '../components/card/portfolioCardBack'

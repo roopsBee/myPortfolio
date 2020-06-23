@@ -8,7 +8,8 @@ const WelcomeText = ({ toggle }) => {
   const text = useRef()
   const rText = useRef()
   const font = useLoader(THREE.FontLoader, '/Roboto.json')
-  const config = useMemo(
+
+  const textConfig = useMemo(
     () => ({
       font,
       size: 1,
@@ -24,9 +25,15 @@ const WelcomeText = ({ toggle }) => {
   )
 
   const { opacity, opacity2 } = useSpring({
+    from: { opacity: 0 },
     opacity: toggle ? 0 : 1,
     opacity2: toggle ? 1 : 0,
     config: { mass: 5, tension: 200, friction: 50, precision: 0.0001 },
+  })
+
+  const enterStyle = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
   })
 
   useFrame(({ clock }) => {
@@ -37,7 +44,7 @@ const WelcomeText = ({ toggle }) => {
   return (
     <group>
       <mesh ref={text} position={[-3.3, 1, 0]}>
-        <textBufferGeometry attach="geometry" args={['WELCOME', config]} />
+        <textBufferGeometry attach="geometry" args={['WELCOME', textConfig]} />
         <a.meshPhongMaterial
           transparent
           opacity={opacity}
@@ -54,7 +61,7 @@ const WelcomeText = ({ toggle }) => {
       <mesh ref={rText} position={[2.5, -2, 0]} rotation-y={Math.PI}>
         <textBufferGeometry
           attach="geometry"
-          args={['R', { ...config, size: 6, bevelSize: 0.04, height: 0.2 }]}
+          args={['R', { ...textConfig, size: 6, bevelSize: 0.04, height: 0.2 }]}
         />
         <a.meshPhongMaterial
           transparent

@@ -49,14 +49,15 @@ export default function FlipCard({ CardFront, CardBack }) {
   }, [winWidth, winHeight])
 
   const flipCard = () => {
+    console.log('flip')
+
     setFlipped(!flipped)
   }
 
   const config = {
-    mass: 5,
-    tension: 700,
+    mass: 1,
+    tension: 500,
     friction: 80,
-    velocity: 2,
   }
 
   const backStyles = useSpring({

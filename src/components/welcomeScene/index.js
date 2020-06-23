@@ -1,11 +1,19 @@
 import { Canvas } from 'react-three-fiber'
 import { makeStyles } from '@material-ui/core'
-
+import Loadable from 'react-loadable'
 import React, { Suspense, useState } from 'react'
-import Camera from './Camera'
-import WelcomeText from './WelcomeText'
 import OrbitLight from './OrbitLight'
 import Overlay from './Overlay'
+
+const WelcomeText = Loadable({
+  loader: () => import('./WelcomeText'),
+  loading: () => null,
+})
+
+const Camera = Loadable({
+  loader: () => import('./Camera'),
+  loading: () => null,
+})
 
 const useStyles = makeStyles({
   root: {
