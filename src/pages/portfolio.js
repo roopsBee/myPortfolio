@@ -7,8 +7,10 @@ import SEO from '../components/seo'
 import FlipCard from '../components/card/flipCard'
 import PortfolioCardBack from '../components/card/portfolioCardBack'
 import PortfolioCardFront from '../components/card/portfolioCardFront'
+import PageTransition from '../components/PageTransition'
+import pageTransitionStyles from '../pageTransitionStyles'
 
-const Portfolio = () => {
+const Portfolio = ({ transitionStatus }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -61,14 +63,19 @@ const Portfolio = () => {
   })
 
   return (
-    <Layout>
-      <SEO title="portfolio" />
-      <Container>
-        <Grid container justify="center" spacing={2}>
-          {portfolioCards}
-        </Grid>
-      </Container>
-    </Layout>
+    <PageTransition
+      transitionStyles={pageTransitionStyles}
+      transitionStatus={transitionStatus}
+    >
+      <Layout>
+        <SEO title="portfolio" />
+        <Container>
+          <Grid container justify="center" spacing={2}>
+            {portfolioCards}
+          </Grid>
+        </Container>
+      </Layout>
+    </PageTransition>
   )
 }
 

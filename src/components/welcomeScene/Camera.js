@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { a, useSpring } from 'react-spring/three'
 import useResponsiveValue from '../../hooks/useResponsiveValue'
 import { useThree } from 'react-three-fiber'
@@ -34,7 +34,7 @@ const Camera = ({ toggle, ...props }) => {
     window.addEventListener('resize', onWindowResize, false)
     return function cleanup() {
       window.removeEventListener('resize', onWindowResize)
-    }
+    } // eslint-disable-next-line
   }, [])
 
   return (

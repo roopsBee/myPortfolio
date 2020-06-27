@@ -7,6 +7,8 @@ add accessibility
 create index page
 
 - add animation to navigation menu
-- add navigation menu
+- add loading placeholder for welcome text
 - adjust drawer items opacity and color, for secondary and primary color in theme
 - add gatsby transition links
+  - make transitions under 400ms
+    -create transition status hook

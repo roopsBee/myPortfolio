@@ -31,11 +31,6 @@ const WelcomeText = ({ toggle }) => {
     config: { mass: 5, tension: 200, friction: 50, precision: 0.0001 },
   })
 
-  const enterStyle = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-  })
-
   useFrame(({ clock }) => {
     text.current.position.z = 5 + Math.sin(clock.getElapsedTime() * 2) / 2
     rText.current.position.z = -5 - Math.sin(clock.getElapsedTime() * 2) / 2

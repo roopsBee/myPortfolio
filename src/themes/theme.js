@@ -13,6 +13,7 @@ const theme = createMuiTheme({
   palette: {
     ...palette,
   },
+  transitions: { duration: { leavingScreen: 100 } },
   overrides: {
     MuiListItem: {
       button: {

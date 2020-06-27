@@ -5,6 +5,12 @@ module.exports = {
     author: `Roopesh Patel`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        // layout: require.resolve(`./src/components/layout/layout.js`),
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-material-ui`,

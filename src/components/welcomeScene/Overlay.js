@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CheckedIcon from '@material-ui/icons/RadioButtonChecked'
 import { makeStyles, Container, Button, Grid } from '@material-ui/core'
 import { a, useSpring } from 'react-spring'
@@ -14,6 +14,10 @@ const useStyles = makeStyles({
   },
   button: {
     backgroundColor: 'rgba(0,0,0,0.7)',
+    borderWidth: 2,
+    '&:hover': {
+      borderWidth: 2,
+    },
   },
   iconButton: {
     borderRadius: '25px',
