@@ -37,17 +37,12 @@ const useStyles = makeStyles({
   },
 })
 
-const Overlay = ({ handleClick, toggle }) => {
+const Overlay = ({ handleClick, toggle, isSceneActive, ...props }) => {
   const classes = useStyles()
 
   const { transform } = useSpring({
     from: { transform: 'scale(1)' },
-    to: async next => {
-      while (1) {
-        await next({ transform: 'scale(1.1)' })
-        await next({ transform: 'scale(1)' })
-      }
-    },
+    to: [{ transform: 'scale(1.1)' }, { transform: 'scale(1)' }],
     config: {
       tension: 80,
       friction: 15,
@@ -55,6 +50,7 @@ const Overlay = ({ handleClick, toggle }) => {
       velocity: 0,
     },
     reset: true,
+    loop: true,
   })
 
   const styles = useSpring({
@@ -65,7 +61,7 @@ const Overlay = ({ handleClick, toggle }) => {
   const AGrid = a(Grid)
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} {...props}>
       <Container>
         <Grid
           className={classes.menu}
@@ -93,21 +89,18 @@ const Overlay = ({ handleClick, toggle }) => {
               Hello
             </Button>
           </AGrid>
-          <Grid>
-            <a.div
-              style={{ transform }}
-              className={classes.iconButtonContainer}
-            >
-              <Button
-                size="large"
-                className={classes.iconButton}
-                startIcon={<CheckedIcon />}
-                variant="outlined"
-                color="secondary"
-                onClick={handleClick}
-              />
-            </a.div>
-          </Grid>
+
+          <AGrid style={{ transform }} className={classes.iconButtonContainer}>
+            <Button
+              size="large"
+              className={classes.iconButton}
+              startIcon={<CheckedIcon />}
+              variant="outlined"
+              color="secondary"
+              disabled={!isSceneActive}
+              onClick={handleClick}
+            />
+          </AGrid>
         </Grid>
       </Container>
     </div>

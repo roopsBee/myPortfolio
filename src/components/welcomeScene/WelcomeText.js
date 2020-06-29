@@ -1,13 +1,17 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { a, useSpring } from 'react-spring/three'
 import * as THREE from 'three'
 import { useFrame, useLoader } from 'react-three-fiber'
 import { useMemo } from 'react'
 
-const WelcomeText = ({ toggle }) => {
+const WelcomeText = ({ toggle, setSceneActive }) => {
   const text = useRef()
   const rText = useRef()
   const font = useLoader(THREE.FontLoader, '/Roboto.json')
+
+  useEffect(() => {
+    setSceneActive(true)
+  }, [])
 
   const textConfig = useMemo(
     () => ({
