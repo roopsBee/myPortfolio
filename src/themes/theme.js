@@ -2,8 +2,6 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import { red, blue, yellow, lightGreen } from '@material-ui/core/colors'
 
 const palette = {
-  primary: { main: red[700] },
-  secondary: { main: blue[600] },
   text: { primary: '#fafafa' },
   error: yellow,
   success: { main: lightGreen['A400'] },

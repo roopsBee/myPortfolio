@@ -18,19 +18,19 @@ const DrawerItems = ({ handleListItemClick, classes }) => {
         />
         <DrawerItem
           name="Portfolio"
-          to="/portfolio"
+          to="/portfolio/"
           Icon={HomeIcon}
           onClick={handleListItemClick}
         />
         <DrawerItem
           name="Bio"
-          to="/bio"
+          to="/bio/"
           Icon={HomeIcon}
           onClick={handleListItemClick}
         />
         <DrawerItem
           name="Contact"
-          to="/contact"
+          to="/contact/"
           Icon={HomeIcon}
           onClick={handleListItemClick}
         />

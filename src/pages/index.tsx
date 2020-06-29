@@ -9,15 +9,10 @@ import pageTransitionStyles from '../pageTransitionStyles'
 const IndexPage = ({ transitionStatus }) => {
   return (
     <>
-      <PageTransition
-        transitionStatus={transitionStatus}
-        transitionStyles={pageTransitionStyles}
-      >
-        <WelcomeScene />
-        <Layout>
-          <SEO title="Home" />
-        </Layout>
-      </PageTransition>
+      <WelcomeScene />
+      <Layout>
+        <SEO title="Home" />
+      </Layout>
     </>
   )
 }

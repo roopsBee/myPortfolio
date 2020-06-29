@@ -21,20 +21,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+    // transition: theme.transitions.create(['margin', 'width'], {
+    //   easing: theme.transitions.easing.sharp,
+    //   duration: theme.transitions.duration.leavingScreen,
+    // }),
     background:
       'linear-gradient(90deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.3) 51%, rgba(254,0,87,0.1) 100%)',
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -51,29 +43,29 @@ const useStyles = makeStyles(theme => ({
     background:
       'linear-gradient(150deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.2) 85%)',
   },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
+  // drawerHeader: {
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   padding: '0 8px',
+  //   ...theme.mixins.toolbar,
+  //   justifyContent: 'flex-end',
+  // },
+  // content: {
+  //   flexGrow: 1,
+  //   padding: theme.spacing(3),
+  // transition: theme.transitions.create('margin', {
+  //   easing: theme.transitions.easing.sharp,
+  //   duration: theme.transitions.duration.leavingScreen,
+  // }),
+  // marginLeft: -drawerWidth,
+  // },
+  // contentShift: {
+  //   transition: theme.transitions.create('margin', {
+  //     easing: theme.transitions.easing.easeOut,
+  //     duration: theme.transitions.duration.enteringScreen,
+  //   }),
+  //   marginLeft: 0,
+  // },
 }))
 
 const Header = ({ siteTitle }) => {
@@ -87,13 +79,7 @@ const Header = ({ siteTitle }) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        elevation={0}
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: mobileOpen,
-        })}
-      >
+      <AppBar position="fixed" elevation={0} className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"

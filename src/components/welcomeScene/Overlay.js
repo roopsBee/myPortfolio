@@ -73,7 +73,6 @@ const Overlay = ({ handleClick, toggle }) => {
           direction="column"
           alignItems="center"
         >
-          {/* <a.div  */}
           <AGrid style={styles} container item xs={6} sm={4} md={3}>
             <Button
               className={classes.button}
