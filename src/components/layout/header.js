@@ -13,7 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { SwipeableDrawer } from '@material-ui/core'
 import DrawerItems from './drawerItems'
 
-const drawerWidth = 240
+const drawerWidth = 230
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
 
 const useStyles = makeStyles(theme => ({

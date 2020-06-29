@@ -63,19 +63,19 @@ const Portfolio = ({ transitionStatus }) => {
   })
 
   return (
-    <PageTransition
-      transitionStyles={pageTransitionStyles}
-      transitionStatus={transitionStatus}
-    >
-      <Layout>
-        <SEO title="portfolio" />
+    <Layout>
+      <SEO title="portfolio" />
+      <PageTransition
+        transitionStyles={pageTransitionStyles}
+        transitionStatus={transitionStatus}
+      >
         <Container>
           <Grid container justify="center" spacing={2}>
             {portfolioCards}
           </Grid>
         </Container>
-      </Layout>
-    </PageTransition>
+      </PageTransition>
+    </Layout>
   )
 }
 
