@@ -7,8 +7,8 @@ import SEO from '../components/seo'
 import FlipCard from '../components/card/flipCard'
 import PortfolioCardBack from '../components/card/portfolioCardBack'
 import PortfolioCardFront from '../components/card/portfolioCardFront'
-import PageTransition from '../components/PageTransition'
-import pageTransitionStyles from '../pageTransitionStyles'
+import PageTransition from '../components/transitions/PageTransition'
+import pageTransitionStyles from '../components/transitions/pageTransitionStyles'
 
 const Portfolio = ({ transitionStatus }) => {
   const data = useStaticQuery(graphql`

@@ -5,17 +5,16 @@
 import React from 'react'
 import { a, useSpring } from 'react-spring'
 
-import useTransitionStatus from '../hooks/useTransitionStatus'
+import useTransitionStatus from '../../hooks/useTransitionStatus'
 
 interface Props {
   transitionStatus: any
   transitionStyles: {
-    enter: { to: {}; from: {} }
-    exit: { to: {}; from: {} }
+    enter: { from: {}; to: {} }
+    exit: { from: {}; to: {} }
     initial?: { from: {}; to: {} }
     config?: {}
   }
-  config?: {}
 }
 
 const PageTransition: React.FC<Props> = ({

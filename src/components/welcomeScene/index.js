@@ -3,8 +3,10 @@ import { makeStyles } from '@material-ui/core'
 import Loadable from 'react-loadable'
 import React, { Suspense, useState } from 'react'
 import { a, useSpring } from 'react-spring'
+import { LinearProgress } from '@material-ui/core'
 import OrbitLight from './OrbitLight'
 import Overlay from './Overlay'
+import ToggleTransition from '../transitions/ToggleTransition'
 
 const WelcomeText = Loadable({
   loader: () => import('./WelcomeText'),
@@ -18,8 +20,14 @@ const Camera = Loadable({
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: 'black',
     position: 'absolute !important',
+  },
+  loader: {
+    position: 'absolute',
+    zIndex: 10,
+    width: '50%',
+    marginTop: '50vh',
+    marginLeft: '25vw',
   },
 })
 
@@ -34,8 +42,20 @@ const Index = () => {
 
   const style = useSpring({ opacity: isSceneActive ? 1 : 0 })
 
+  const loadingTransitions = {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  }
+
   return (
     <>
+      <ToggleTransition
+        toggle={!isSceneActive}
+        transitionStyles={loadingTransitions}
+      >
+        <LinearProgress className={classes.loader} color="secondary" />
+      </ToggleTransition>
       <a.div style={style}>
         <Overlay
           handleClick={handleClick}
