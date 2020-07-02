@@ -4,8 +4,8 @@ add navigation to app bar for large screens
 
 add accessibility
 
-create index page
-
+- create bio
+- create contact
+- style portfolio page
+  -style cards
 - add animations to navigation menu
-- add loading placeholder for welcome text
-- adjust drawer items opacity and color, for secondary and primary color in theme

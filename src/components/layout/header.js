@@ -20,14 +20,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
-  appBar: {
-    // transition: theme.transitions.create(['margin', 'width'], {
-    //   easing: theme.transitions.easing.sharp,
-    //   duration: theme.transitions.duration.leavingScreen,
-    // }),
-    background:
-      'linear-gradient(90deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.3) 51%, rgba(254,0,87,0.1) 100%)',
-  },
+  appBar: {},
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -40,32 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background:
-      'linear-gradient(150deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.2) 85%)',
   },
-  // drawerHeader: {
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   padding: '0 8px',
-  //   ...theme.mixins.toolbar,
-  //   justifyContent: 'flex-end',
-  // },
-  // content: {
-  //   flexGrow: 1,
-  //   padding: theme.spacing(3),
-  // transition: theme.transitions.create('margin', {
-  //   easing: theme.transitions.easing.sharp,
-  //   duration: theme.transitions.duration.leavingScreen,
-  // }),
-  // marginLeft: -drawerWidth,
-  // },
-  // contentShift: {
-  //   transition: theme.transitions.create('margin', {
-  //     easing: theme.transitions.easing.easeOut,
-  //     duration: theme.transitions.duration.enteringScreen,
-  //   }),
-  //   marginLeft: 0,
-  // },
 }))
 
 const Header = ({ siteTitle }) => {

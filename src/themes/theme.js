@@ -15,27 +15,40 @@ const theme = createMuiTheme({
   overrides: {
     MuiListItem: {
       button: {
-        color: '#000000',
-        backgroundColor: blue[600],
+        color: '#f50057',
+        border: '1px solid rgba(254,0,87,0.7)',
+        borderRadius: 3,
+        backgroundColor: 'rgba(0,0,0,0.8)',
         '&$selected': {
           '&:hover': {
-            backgroundColor: blue[500],
+            color: '#fafafa',
+            // backgroundColor: blue[500],
           },
+          background:
+            'linear-gradient(90deg, rgba(255,0,87,0.9220063025210083) 0%, rgba(254,0,87,0.23012955182072825) 69%)',
           color: '#fafafa',
-          backgroundColor: blue[700],
         },
         '&:hover': {
           color: '#fafafa',
-          backgroundColor: blue[500],
+          background:
+            'linear-gradient(90deg, rgba(255,0,87,0.9220063025210083) 0%, rgba(254,0,87,0.23012955182072825) 69%)',
         },
       },
     },
     MuiDrawer: {
       paper: {
-        backgroundColor: red[700],
+        background:
+          'linear-gradient(180deg, rgba(164,0,56,0.9) 0%, rgba(254,0,87,0.5) 53%, rgba(254,0,87,0.1) 100%)',
       },
     },
     MuiPaper: { root: { backgroundColor: red[700] } },
+    MuiAppBar: {
+      colorPrimary: {
+        background:
+          'linear-gradient(90deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.3) 51%, rgba(254,0,87,0.1) 100%)',
+        backgroundColor: 'transparent',
+      },
+    },
   },
 })
 export default theme

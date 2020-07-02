@@ -3,12 +3,15 @@ import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import TransitionLink from 'gatsby-plugin-transition-link'
 
 import { globalHistory as history } from '@reach/router'
+import { useMediaQuery } from '@material-ui/core'
 
 function DrawerItem({ name, to, handleClick, Icon, ...props }) {
   const isPath = history.location.pathname === to ? true : false
+  const isSmAndUp = useMediaQuery(theme => theme.breakpoints.up('sm'))
 
   return (
     <ListItem
+      dense={isSmAndUp}
       component={TransitionLink}
       to={to}
       button
