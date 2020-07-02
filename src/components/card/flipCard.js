@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   back: {
     position: 'absolute',
     width: rect => rect.cardWidth,
-    height: rect => rect.cardHeight,
+    minHeight: rect => rect.cardHeight,
     zIndex: 0,
   },
   flipped: {

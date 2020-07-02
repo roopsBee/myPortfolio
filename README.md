@@ -1,11 +1,8 @@
 Todo
 
-add navigation to app bar for large screens
-
-add accessibility
-
+- add accessibility
+- create welcome text on home screen. could replace loader.
 - create bio
 - create contact
 - style portfolio page
   -style cards
-- add animations to navigation menu
