@@ -19,9 +19,6 @@ const useStyles = makeStyles({
     '& .MuiMenu-list': {
       padding: 0,
     },
-    '& .MuiMenuItem-root': {
-      color: 'white',
-    },
     '& .MuiListItemIcon-root': {
       minWidth: 0,
       padding: '0 16px 0 0',

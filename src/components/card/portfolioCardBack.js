@@ -18,6 +18,8 @@ const useStyles = makeStyles({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    border: '2px solid #f50057',
+    backgroundColor: 'rgba(254,0,87,0.3)',
   },
   button: {
     height: 44,
@@ -25,15 +27,24 @@ const useStyles = makeStyles({
     minWidth: 0,
     borderRadius: 40,
     padding: 0,
+    color: 'black',
+    backgroundColor: 'rgba(254,0,87,0.5)',
+    border: '2px solid rgba(254,0,87,1)',
+    '&:hover': {
+      borderColor: 'white',
+    },
+  },
+  title: {
+    color: 'rgba(254,0,87,1)',
   },
   gitHubButton: {
     '& .MuiSvgIcon-root': {
-      fontSize: 46,
+      fontSize: 40,
     },
   },
   demoButton: {
     '& .MuiSvgIcon-root': {
-      fontSize: 54,
+      fontSize: 48,
     },
   },
   backButton: {
@@ -42,9 +53,14 @@ const useStyles = makeStyles({
     },
   },
   actions: { padding: '0 16px 16px 16px' },
-  divider: { margin: '10px 0px' },
+  divider: { margin: '10px 0px', backgroundColor: 'rgba(254,0,87,1)' },
   content: { paddingBottom: '0px', marginBottom: 'auto' },
   tech: { padding: '0px 16px' },
+  chip: {
+    border: '1px solid rgba(254,0,87,1)',
+    backgroundColor: 'transparent',
+    color: 'white',
+  },
 })
 
 export default function PortfolioCardBack({
@@ -61,17 +77,22 @@ export default function PortfolioCardBack({
 
   const techList = tech.map(tech => (
     <Grid item key={tech}>
-      <Chip label={tech} />
+      <Chip label={tech} className={classes.chip} />
     </Grid>
   ))
 
   return (
     <Card className={classes.root}>
       <CardContent className={classes.content}>
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="h2"
+          className={classes.title}
+        >
           {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textPrimary" component="p">
           {description}
         </Typography>
       </CardContent>

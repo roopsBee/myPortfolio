@@ -32,7 +32,15 @@ const theme = createMuiTheme({
           color: '#fafafa',
           background:
             'linear-gradient(90deg, rgba(255,0,87,0.9220063025210083) 0%, rgba(254,0,87,0.23012955182072825) 69%)',
+          '& .MuiListItemIcon-root': {
+            color: 'white',
+          },
         },
+      },
+    },
+    MuiListItemIcon: {
+      root: {
+        color: '#f50057',
       },
     },
     MuiDrawer: {

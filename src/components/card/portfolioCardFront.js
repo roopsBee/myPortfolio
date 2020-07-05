@@ -16,12 +16,17 @@ const useStyles = makeStyles({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    border: '2px solid #f50057',
+    backgroundColor: 'rgba(254,0,87,0.3)',
   },
   button: {
     height: 40,
     minWidth: 75,
     paddingRight: 22,
     paddingLeft: 22,
+  },
+  title: {
+    color: 'rgba(254,0,87,1)',
   },
   img: { maxHeight: 300 },
   actions: { marginTop: 'auto' },
@@ -50,10 +55,15 @@ export default function PortfolioCardFront({
         alt="portfolio image"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="h2"
+          className={classes.title}
+        >
           {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" color="textPrimary" component="p">
           {summary}
         </Typography>
       </CardContent>

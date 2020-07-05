@@ -25,6 +25,7 @@ const useStyles = makeStyles({
   },
   back: {
     position: 'absolute',
+    height: 100,
     width: rect => rect.cardWidth,
     minHeight: rect => rect.cardHeight,
     zIndex: 0,
