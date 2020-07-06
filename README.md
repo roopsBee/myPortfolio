@@ -4,5 +4,3 @@ Todo
 - create welcome text on home screen. could replace loader.
 - create bio
 - create contact
-- style portfolio page
-  -style cards
