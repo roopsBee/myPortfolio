@@ -1,0 +1,26 @@
+
+### Incorrect method
+GET   http://localhost:8888/.netlify/functions/send-grid HTTP/1.1
+content-type: application/json
+
+
+### Test Email 
+POST  http://localhost:8888/.netlify/functions/send-grid HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Errol",
+    "email": "errol@gmail.com",
+    "subject": "test subject",
+    "text": "test email"
+}
+
+### Missing data 
+POST  http://localhost:8888/.netlify/functions/send-grid HTTP/1.1
+content-type: application/json
+
+{
+    "email": "errol@gmail.com",
+    "subject": "test subject",
+    "text": "test email"
+}

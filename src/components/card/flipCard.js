@@ -50,8 +50,6 @@ export default function FlipCard({ CardFront, CardBack }) {
   }, [winWidth, winHeight])
 
   const flipCard = () => {
-    console.log('flip')
-
     setFlipped(!flipped)
   }
 
