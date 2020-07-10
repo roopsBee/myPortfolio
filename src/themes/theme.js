@@ -1,9 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import { red, yellow, lightGreen } from '@material-ui/core/colors'
+import { red, lightGreen } from '@material-ui/core/colors'
 
 const palette = {
-  text: { primary: '#fafafa' },
-  error: yellow,
+  text: { primary: '#fafafa', secondary: '#f50057' },
+  error: red,
   success: { main: lightGreen['A400'] },
 }
 
@@ -49,12 +49,24 @@ const theme = createMuiTheme({
           'linear-gradient(180deg, rgba(164,0,56,0.9) 0%, rgba(254,0,87,0.5) 53%, rgba(254,0,87,0.1) 100%)',
       },
     },
-    MuiPaper: { root: { backgroundColor: red[700] } },
+    MuiPaper: {
+      root: { backgroundColor: 'rgba(254,0,87,0.1)' },
+    },
     MuiAppBar: {
       colorPrimary: {
         background:
           'linear-gradient(90deg, rgba(254,0,87,0.7) 0%, rgba(254,0,87,0.3) 51%, rgba(254,0,87,0.1) 100%)',
         backgroundColor: 'transparent',
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        '& fieldset': {
+          border: '1px solid #f50057',
+        },
+        '&:hover fieldset': {
+          border: '2px solid #f50057 !important',
+        },
       },
     },
   },

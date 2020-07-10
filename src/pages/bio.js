@@ -1,14 +1,13 @@
 import React from 'react'
-import { Container } from '@material-ui/core'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
+import ContactForm from '../components/contactForm/ContactForm'
 
 const Bio = () => {
   return (
     <Layout>
       <SEO title="Bio" />
-      <Container>Bio</Container>
     </Layout>
   )
 }
