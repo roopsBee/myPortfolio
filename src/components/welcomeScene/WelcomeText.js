@@ -11,6 +11,7 @@ const WelcomeText = ({ toggle, setSceneActive }) => {
 
   useEffect(() => {
     setSceneActive(true)
+    // eslint-disable-next-line
   }, [])
 
   const textConfig = useMemo(

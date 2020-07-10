@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import { red, blue, yellow, lightGreen } from '@material-ui/core/colors'
+import { red, yellow, lightGreen } from '@material-ui/core/colors'
 
 const palette = {
   text: { primary: '#fafafa' },
