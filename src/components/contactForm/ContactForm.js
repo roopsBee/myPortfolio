@@ -7,6 +7,8 @@ import * as yup from 'yup'
 import FormikTextField from './FormikTextField.js'
 import sendMail from './sendMail'
 import useResponsiveValue from '../../hooks/useResponsiveValue'
+import ResponseDialog from './ResponseDialog'
+import { useState } from 'react'
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -55,6 +57,10 @@ const validationSchema = yup.object().shape({
 
 export default function ContactForm() {
   const classes = useStyles()
+  const [dialogOpen, setDialogOpen] = useState(true)
+  const handleClose = () => {
+    setDialogOpen(false)
+  }
 
   const responsiveMargin = useResponsiveValue(
     'normal',
@@ -75,8 +81,16 @@ export default function ContactForm() {
               subject: '',
               text: '',
             }}
-            onSubmit={async values => {
-              await sendMail(values)
+            onSubmit={async (values, { resetForm }) => {
+              try {
+                const isSuccess = await sendMail(values)
+                setDialogOpen(true)
+                if (isSuccess) {
+                  resetForm()
+                }
+              } catch (err) {
+                console.log(err)
+              }
             }}
             validateOnChange={false}
             validationSchema={validationSchema}
@@ -140,6 +154,11 @@ export default function ContactForm() {
           </Formik>
         </Paper>
       </Container>
+      <ResponseDialog
+        open={dialogOpen}
+        handleClose={handleClose}
+        message="Message has been sent"
+      />
     </div>
   )
 }

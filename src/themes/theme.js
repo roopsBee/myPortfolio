@@ -5,6 +5,7 @@ const palette = {
   text: { primary: '#fafafa', secondary: '#f50057' },
   error: red,
   success: { main: lightGreen['A400'] },
+  dialog: { background: 'rgba(30,0,10,0.9)' },
 }
 
 const theme = createMuiTheme({
