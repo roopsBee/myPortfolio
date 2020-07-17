@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import { makeStyles } from '@material-ui/core'
-import { animated, useTransition } from 'react-spring'
+import MuiTransition from './MuiTransition'
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -21,40 +21,6 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Transition = React.forwardRef((props, ref) => {
-  const { in: open, children, onEnter, onExited, ...other } = props
-  const transitions = useTransition(open, {
-    from: { opacity: 0, transform: `perspective(600px) rotateY(90deg)` },
-    enter: {
-      opacity: 1,
-      transform: `perspective(600px) rotateY(0deg)`,
-    },
-    leave: {
-      opacity: 0,
-      transform: `perspective(600px) rotateY(-90deg)`,
-    },
-    onStart: () => {
-      if (open && onEnter) {
-        onEnter()
-      }
-    },
-    onRest: () => {
-      if (!open && onExited) {
-        onExited()
-      }
-    },
-  })
-
-  return transitions(
-    (styles, toggle) =>
-      toggle && (
-        <animated.div ref={ref} style={styles} {...other}>
-          {children}
-        </animated.div>
-      )
-  )
-})
-
 export default function ResponsiveDialog({ open, handleClose, message }) {
   const classes = useStyles()
   return (
@@ -66,7 +32,7 @@ export default function ResponsiveDialog({ open, handleClose, message }) {
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
       maxWidth="xs"
-      TransitionComponent={Transition}
+      TransitionComponent={MuiTransition}
     >
       <DialogContent>
         <DialogContentText align="center" id="alert-dialog-description">
