@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
 
     if (event.httpMethod === 'POST') {
       await sgMail.send(msg)
-      return { statusCode: 200, body: 'mail sent' }
+      return { statusCode: 200, body: 'Mail sent' }
     } else {
       return { statusCode: 405, body: 'Method not allowed' }
     }

@@ -56,8 +56,9 @@ const validationSchema = yup.object().shape({
 })
 
 export default function ContactForm() {
+  const [dialogMessage, setDialogMessasge] = useState('')
   const classes = useStyles()
-  const [dialogOpen, setDialogOpen] = useState(true)
+  const [dialogOpen, setDialogOpen] = useState(false)
   const handleClose = () => {
     setDialogOpen(false)
   }
@@ -84,12 +85,21 @@ export default function ContactForm() {
             onSubmit={async (values, { resetForm }) => {
               try {
                 const isSuccess = await sendMail(values)
-                setDialogOpen(true)
                 if (isSuccess) {
+                  setDialogMessasge('Mail sent')
                   resetForm()
+                } else {
+                  setDialogMessasge(
+                    'An error occured, email portfolio@roopeshpatel.com'
+                  )
                 }
+                setDialogOpen(true)
               } catch (err) {
+                setDialogMessasge(
+                  'An error occured, email portfolio@roopeshpatel.com'
+                )
                 console.log(err)
+                setDialogOpen(true)
               }
             }}
             validateOnChange={false}
@@ -157,7 +167,7 @@ export default function ContactForm() {
       <ResponseDialog
         open={dialogOpen}
         handleClose={handleClose}
-        message="Message has been sent"
+        message={dialogMessage}
       />
     </div>
   )
