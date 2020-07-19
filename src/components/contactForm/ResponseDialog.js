@@ -44,6 +44,7 @@ export default function ResponsiveDialog({ open, handleClose, message }) {
           onClick={handleClose}
           color="secondary"
           variant="outlined"
+          // eslint-disable-next-line
           autoFocus
           fullWidth
         >

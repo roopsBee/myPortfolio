@@ -1,9 +1,12 @@
 import axios from 'axios'
 
-const sendMail = async values => {
+const sendMail = async (values, token) => {
   try {
-    const { data } = await axios.post('/.netlify/functions/send-grid', values)
-    if (data) {
+    const { data } = await axios.post('/.netlify/functions/send-grid', {
+      ...values,
+      token,
+    })
+    if (data === 'Mail sent') {
       console.log(data)
       return true
     }

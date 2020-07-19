@@ -9,6 +9,7 @@ import sendMail from './sendMail'
 import useResponsiveValue from '../../hooks/useResponsiveValue'
 import ResponseDialog from './ResponseDialog'
 import { useState } from 'react'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -59,6 +60,8 @@ export default function ContactForm() {
   const [dialogMessage, setDialogMessasge] = useState('')
   const classes = useStyles()
   const [dialogOpen, setDialogOpen] = useState(false)
+  const { executeRecaptcha } = useGoogleReCaptcha()
+
   const handleClose = () => {
     setDialogOpen(false)
   }
@@ -84,17 +87,20 @@ export default function ContactForm() {
             }}
             onSubmit={async (values, { resetForm }) => {
               try {
-                const isSuccess = await sendMail(values)
+                const token = await executeRecaptcha('contact')
+                const isSuccess = await sendMail(values, token)
                 if (isSuccess) {
                   setDialogMessasge('Mail sent')
                   resetForm()
                 } else {
+                  console.log('message failure')
                   setDialogMessasge(
                     'An error occured, email portfolio@roopeshpatel.com'
                   )
                 }
                 setDialogOpen(true)
               } catch (err) {
+                console.log('throw error')
                 setDialogMessasge(
                   'An error occured, email portfolio@roopeshpatel.com'
                 )
