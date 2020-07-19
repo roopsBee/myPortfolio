@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
-import { Button, Paper, Container, Typography } from '@material-ui/core'
+import { Button, Paper, Container, Typography, Link } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import * as yup from 'yup'
 
@@ -22,11 +22,11 @@ const useStyles = makeStyles(theme => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    margin: theme.spacing(1, 0, 1, 0),
     textAlign: 'center',
   },
   submit: {
-    margin: theme.spacing(3, 0, 3, 0),
+    margin: theme.spacing(2, 0, 1, 0),
   },
   container: {
     padding: 0,
@@ -93,14 +93,12 @@ export default function ContactForm() {
                   setDialogMessasge('Mail sent')
                   resetForm()
                 } else {
-                  console.log('message failure')
                   setDialogMessasge(
                     'An error occured, email portfolio@roopeshpatel.com'
                   )
                 }
                 setDialogOpen(true)
               } catch (err) {
-                console.log('throw error')
                 setDialogMessasge(
                   'An error occured, email portfolio@roopeshpatel.com'
                 )
@@ -154,7 +152,27 @@ export default function ContactForm() {
                   name="text"
                   type="text"
                 />
-
+                <Typography
+                  align="left"
+                  color="textSecondary"
+                  variant="caption"
+                >
+                  This site is protected by reCAPTCHA and the Google{' '}
+                  <Link
+                    href="https://policies.google.com/privacy"
+                    color="textPrimary"
+                  >
+                    Privacy Policy
+                  </Link>{' '}
+                  and{' '}
+                  <Link
+                    href="https://policies.google.com/terms"
+                    color="textPrimary"
+                  >
+                    Terms of Service
+                  </Link>{' '}
+                  apply.
+                </Typography>
                 <Button
                   className={classes.submit}
                   disabled={isSubmitting}
