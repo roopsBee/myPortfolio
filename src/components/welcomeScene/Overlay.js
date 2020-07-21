@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     width: '100%',
   },
   menu: {
-    marginTop: '60vh',
+    marginTop: '55vh',
   },
   button: {
     backgroundColor: 'rgba(0,0,0,0.7)',
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
     },
   },
   iconButtonContainer: {
-    marginTop: '10vh',
+    marginTop: '5vh',
   },
 })
 
