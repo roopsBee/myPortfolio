@@ -21,9 +21,10 @@ function DrawerItem({ name, to, handleClick, Icon, ...props }) {
       {...props}
       exit={{
         delay: 0,
-        length: 0,
+        length: 0.2,
       }}
       enter={{
+        delay: 0.3,
         length: 0.2,
       }}
     >

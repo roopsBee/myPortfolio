@@ -7,6 +7,3 @@ Todo
   - write out what i want on bio
 - change autocomplete styles on forms
 - set button for welcome scene higher
-- add page transitions to other pages
-- create contact
-  - validate input with yup, sanitize with validator

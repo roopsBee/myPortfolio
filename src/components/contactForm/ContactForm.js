@@ -37,22 +37,24 @@ const validationSchema = yup.object().shape({
   name: yup
     .string()
     .trim()
-    .max(40)
+    .min(2, 'Name is too short')
+    .max(40, 'Name is too long')
     .required('Name Required'),
   email: yup
     .string()
     .trim()
-    .max(40)
+    .max(50, 'Email is too long')
     .required('Email Required')
     .email('Enter a valid Email'),
   subject: yup
     .string()
-    .max(30)
+    .min(2, 'Subject is too short')
+    .max(30, 'Subject too long')
     .required('Subject Required'),
   text: yup
     .string()
     .min(10, 'Message is too short')
-    .max(500, 'Max 500 characters')
+    .max(500, 'Message too long. Max 500 characters')
     .required('Enter a  Message'),
 })
 
