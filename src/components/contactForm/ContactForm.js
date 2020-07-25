@@ -183,7 +183,7 @@ export default function ContactForm() {
                   type="submit"
                   fullWidth
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </Form>
             )}

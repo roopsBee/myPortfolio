@@ -70,6 +70,14 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiButton: {
+      root: {
+        '&:disabled': {
+          color: 'yellow',
+          border: '1px solid yellow !important',
+        },
+      },
+    },
   },
 })
 export default theme
