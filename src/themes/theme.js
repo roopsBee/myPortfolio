@@ -69,6 +69,12 @@ const theme = createMuiTheme({
           border: '2px solid #f50057 !important',
         },
       },
+      input: {
+        '&:-webkit-autofill': {
+          '-webkit-text-fill-color': '#f50057',
+          '-webkit-box-shadow': '0px 0px 0px 1000px #1f000b inset',
+        },
+      },
     },
     MuiButton: {
       root: {
