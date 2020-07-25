@@ -9,4 +9,3 @@ Todo
 - update menu on scene
 - contact page
   - add sending state to form so user knows to wait. Maybe a modal with loading spinner. Or spinner on sending button
-  - change warning color

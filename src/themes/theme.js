@@ -1,9 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import { red, lightGreen } from '@material-ui/core/colors'
+import { lightGreen, yellow } from '@material-ui/core/colors'
 
 const palette = {
   text: { primary: '#fafafa', secondary: '#f50057' },
-  error: red,
+  error: yellow,
   success: { main: lightGreen['A400'] },
   dialog: { background: 'rgba(30,0,10,0.9)' },
 }
