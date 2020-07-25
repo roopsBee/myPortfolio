@@ -2,6 +2,7 @@ import React from 'react'
 import CheckedIcon from '@material-ui/icons/RadioButtonChecked'
 import { makeStyles, Container, Button, Grid } from '@material-ui/core'
 import { a, useSpring } from 'react-spring'
+import TransitionLink from 'gatsby-plugin-transition-link'
 
 const useStyles = makeStyles({
   root: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles({
     width: '100%',
   },
   menu: {
-    marginTop: '55vh',
+    marginTop: '45vh',
   },
   button: {
     backgroundColor: 'rgba(0,0,0,0.7)',
@@ -68,25 +69,66 @@ const Overlay = ({ handleClick, toggle, isSceneActive, ...props }) => {
           container
           direction="column"
           alignItems="center"
+          spacing={1}
         >
           <AGrid style={styles} container item xs={6} sm={4} md={3}>
             <Button
+              component={TransitionLink}
               className={classes.button}
               fullWidth
               variant="outlined"
               color="secondary"
+              to="/portfolio/"
+              exit={{
+                delay: 0,
+                length: 0.2,
+              }}
+              enter={{
+                delay: 0.3,
+                length: 0.2,
+              }}
             >
-              Menu
+              Portfolio
             </Button>
           </AGrid>
           <AGrid style={styles} container item xs={6} sm={4} md={3}>
             <Button
+              component={TransitionLink}
               className={classes.button}
               fullWidth
               variant="outlined"
               color="secondary"
+              to="/bio/"
+              exit={{
+                delay: 0,
+                length: 0.2,
+              }}
+              enter={{
+                delay: 0.3,
+                length: 0.2,
+              }}
             >
-              Hello
+              Bio
+            </Button>
+          </AGrid>
+          <AGrid style={styles} container item xs={6} sm={4} md={3}>
+            <Button
+              component={TransitionLink}
+              className={classes.button}
+              fullWidth
+              variant="outlined"
+              color="secondary"
+              to="/contact/"
+              exit={{
+                delay: 0,
+                length: 0.2,
+              }}
+              enter={{
+                delay: 0.3,
+                length: 0.2,
+              }}
+            >
+              Contact
             </Button>
           </AGrid>
 
