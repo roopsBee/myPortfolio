@@ -71,7 +71,7 @@ const theme = createMuiTheme({
       },
       input: {
         '&:-webkit-autofill': {
-          '-webkit-text-fill-color': '#f50057',
+          '-webkit-text-fill-color': 'white',
           '-webkit-box-shadow': '0px 0px 0px 1000px #1f000b inset',
         },
       },
