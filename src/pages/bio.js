@@ -2,12 +2,16 @@ import React from 'react'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
+import BioScene from '../components/bioScene/BioScene'
 
 const Bio = () => {
   return (
-    <Layout>
-      <SEO title="Bio" />
-    </Layout>
+    <>
+      <BioScene />
+      <Layout>
+        <SEO title="Bio" />
+      </Layout>
+    </>
   )
 }
 
