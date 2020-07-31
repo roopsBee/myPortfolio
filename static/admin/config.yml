@@ -22,3 +22,13 @@ collections:
           hint: 'Comma seperated list',
         }
       - { label: 'Image', name: 'Image', widget: 'image' }
+
+  - label: 'Pages'
+    name: 'pages'
+    files:
+      - label: 'Bio Page'
+        name: 'bio'
+        file: 'cms/pages/bio.yml'
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: My bio, name: bio, widget: markdown }
