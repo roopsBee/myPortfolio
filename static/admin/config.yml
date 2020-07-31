@@ -31,4 +31,4 @@ collections:
         file: 'cms/pages/bio.md'
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: My bio, name: bio, widget: markdown }
+          - { label: My bio, name: body, widget: markdown }
