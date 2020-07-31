@@ -51,7 +51,7 @@ const theme = createMuiTheme({
       },
     },
     MuiPaper: {
-      root: { backgroundColor: 'rgba(254,0,87,0.1)' },
+      root: { backgroundColor: 'rgba(254,0,87,0.3)' },
     },
     MuiAppBar: {
       colorPrimary: {

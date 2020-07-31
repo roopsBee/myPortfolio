@@ -5,14 +5,18 @@ const useStyles = makeStyles(theme => ({
   paper: {
     border: `2px solid ${theme.palette.secondary.main}`,
     padding: theme.spacing(1),
-    marginTop: theme.spacing(1),
+    margin: theme.spacing(1),
+    zIndex: 10,
+    [theme.breakpoints.down('xs')]: {
+      margin: 0,
+    },
   },
 }))
 
 const BioOverlay = ({ title, html }) => {
   const classes = useStyles()
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs" disableGutters>
       <Paper className={classes.paper}>
         <Typography
           variant="h5"

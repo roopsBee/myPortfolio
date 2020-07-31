@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
-// import BioScene from '../components/bioScene/BioScene'
+import BioScene from '../components/bioScene/BioScene'
 import BioOverlay from '../components/bioOverlay/BioOverlay'
 
 const Bio = () => {
@@ -24,7 +24,7 @@ const Bio = () => {
 
   return (
     <>
-      {/* <BioScene /> */}
+      <BioScene />
       <Layout>
         <BioOverlay title={bioTitle} html={bioHTML} />
         <SEO title="Bio" />
