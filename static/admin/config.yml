@@ -28,7 +28,7 @@ collections:
     files:
       - label: 'Bio Page'
         name: 'bio'
-        file: 'cms/pages/bio.yml'
+        file: 'cms/pages/bio.md'
         fields:
           - { label: Title, name: title, widget: string }
           - { label: My bio, name: bio, widget: markdown }
