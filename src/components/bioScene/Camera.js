@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import useResponsiveValue from '../../hooks/useResponsiveValue'
-import { useThree } from 'react-three-fiber'
+import { useThree, useFrame } from 'react-three-fiber'
 import { useMemo } from 'react'
 import { PerspectiveCamera } from 'drei'
 
@@ -30,12 +30,14 @@ const Camera = ({ ...props }) => {
     } // eslint-disable-next-line
   }, [])
 
+  useFrame(() => (camera.rotation.y += 0.00005))
+
   return (
     <>
       <PerspectiveCamera
         {...props}
         makeDefault
-        fov={30}
+        fov={10}
         zoom={responsiveZoom}
         position={[0, 0, 10]}
         rotation={[0, 0, 0]}

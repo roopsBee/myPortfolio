@@ -10,6 +10,7 @@ import PortfolioCardBack from '../components/card/portfolioCardBack'
 import PortfolioCardFront from '../components/card/portfolioCardFront'
 import PageTransition from '../components/transitions/PageTransition'
 import pageTransitionStyles from '../components/transitions/pageTransitionStyles'
+import BioScene from '../components/bioScene/BioScene'
 
 const useStyles = makeStyles({
   container: {
@@ -91,6 +92,7 @@ const Portfolio = ({ transitionStatus }) => {
             {portfolioCards}
           </Grid>
         </Container>
+        <BioScene />
       </PageTransition>
     </Layout>
   )

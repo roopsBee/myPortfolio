@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import ContactForm from '../components/contactForm/ContactForm'
 import PageTransition from '../components/transitions/PageTransition'
 import pageTransitionStyles from '../components/transitions/pageTransitionStyles'
+import BioScene from '../components/bioScene/BioScene'
 import '../contact.css'
 
 const Contact = ({ transitionStatus }) => {
@@ -16,6 +17,7 @@ const Contact = ({ transitionStatus }) => {
         transitionStyles={pageTransitionStyles}
       >
         <ContactForm />
+        <BioScene />
       </PageTransition>
     </Layout>
   )

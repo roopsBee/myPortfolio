@@ -3,6 +3,7 @@ import Loadable from 'react-loadable'
 
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
+import BioScene from '../components/bioScene/BioScene'
 
 const WelcomeScene = Loadable({
   loader: () => import('../components/welcomeScene/index'),
@@ -12,6 +13,7 @@ const WelcomeScene = Loadable({
 const IndexPage = ({ transitionStatus }) => {
   return (
     <>
+      <BioScene />
       <WelcomeScene />
       <Layout>
         <SEO title="Home" />
