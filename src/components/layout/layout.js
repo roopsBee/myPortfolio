@@ -5,7 +5,6 @@ import { ThemeProvider } from '@material-ui/styles'
 
 import Header from './header'
 import theme from '../../themes/theme'
-import Footer from './footer'
 import './layout.css'
 import { Toolbar } from '@material-ui/core'
 
@@ -27,7 +26,6 @@ const Layout = ({ children }) => {
             <Header siteTitle={data.site.siteMetadata.title} />
             <Toolbar />
             <main>{children}</main>
-            <Footer />
           </ThemeProvider>
         </div>
       )}

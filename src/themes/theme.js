@@ -66,7 +66,7 @@ const theme = createMuiTheme({
           border: '1px solid #f50057',
         },
         '&:hover fieldset': {
-          border: '2px solid #f50057 !important',
+          border: '2px solid #f50057',
         },
       },
       input: {
@@ -76,11 +76,24 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiFormLabel: {
+      colorSecondary: {
+        color: 'white',
+        '&.Mui-focused': {
+          color: 'white',
+        },
+      },
+    },
     MuiButton: {
       root: {
         '&:disabled': {
           color: 'yellow',
           border: '1px solid yellow !important',
+        },
+      },
+      outlinedSecondary: {
+        '& .MuiButton-label': {
+          color: 'white',
         },
       },
     },
