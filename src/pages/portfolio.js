@@ -21,19 +21,21 @@ const Portfolio = ({ transitionStatus }) => {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
         edges {
           node {
-            frontmatter {
-              summary
-              tech
-              title
-              description
-              url
-              Image {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
+            childMarkdownRemark {
+              frontmatter {
+                summary
+                tech
+                title
+                description
+                url
+                Image {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }
@@ -44,11 +46,16 @@ const Portfolio = ({ transitionStatus }) => {
     }
   `)
 
-  const portfolioCards = data.allMarkdownRemark.edges.map(edge => {
-    const { summary, title, description, tech } = edge.node.frontmatter
-    console.log(edge.node.frontmatter.Image)
-    const image = edge.node.frontmatter.Image.childImageSharp.fluid
-    // const image = ''
+  const portfolioCards = data.allFile.edges.map(edge => {
+    const {
+      summary,
+      title,
+      description,
+      tech,
+      Image: imgData,
+    } = edge.node.childMarkdownRemark.frontmatter
+    const image = imgData.childImageSharp.fluid
+
     return (
       <Grid key={title} container item justify="center" xs={12} sm={6} md={4}>
         <FlipCard
