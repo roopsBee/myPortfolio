@@ -32,7 +32,7 @@ const Portfolio = ({ transitionStatus }) => {
               url
               Image {
                 childImageSharp {
-                  fluid(maxWidth: 375) {
+                  fluid {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -46,7 +46,9 @@ const Portfolio = ({ transitionStatus }) => {
 
   const portfolioCards = data.allMarkdownRemark.edges.map(edge => {
     const { summary, title, description, tech } = edge.node.frontmatter
+    console.log(edge.node.frontmatter.Image)
     const image = edge.node.frontmatter.Image.childImageSharp.fluid
+    // const image = ''
     return (
       <Grid key={title} container item justify="center" xs={12} sm={6} md={4}>
         <FlipCard

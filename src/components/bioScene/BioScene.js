@@ -7,12 +7,13 @@ import { Stars } from 'drei'
 const useStyles = makeStyles({
   canvas: {
     position: 'absolute !important',
+    top: 0,
+    left: 0,
   },
 })
 
 const BioScene = () => {
   const classes = useStyles()
-  console.log('outer', window.outerHeight, 'inner', window.innerHeight)
   return (
     <Canvas className={classes.canvas}>
       <ambientLight intensity={0.7} />
