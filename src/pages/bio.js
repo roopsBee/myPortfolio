@@ -5,8 +5,10 @@ import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 import BioScene from '../components/bioScene/BioScene'
 import BioOverlay from '../components/bioOverlay/BioOverlay'
+import PageTransition from '../components/transitions/PageTransition'
+import pageTransitionStyles from '../components/transitions/pageTransitionStyles'
 
-const Bio = () => {
+const Bio = ({ transitionStatus }) => {
   const data = useStaticQuery(graphql`
     query {
       file(name: { eq: "bio" }) {
@@ -26,8 +28,13 @@ const Bio = () => {
     <>
       <BioScene />
       <Layout>
-        <BioOverlay title={bioTitle} html={bioHTML} />
-        <SEO title="Bio" />
+        <PageTransition
+          transitionStatus={transitionStatus}
+          transitionStyles={pageTransitionStyles}
+        >
+          <BioOverlay title={bioTitle} html={bioHTML} />
+          <SEO title="Bio" />
+        </PageTransition>
       </Layout>
     </>
   )
