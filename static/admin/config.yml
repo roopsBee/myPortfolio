@@ -8,7 +8,7 @@ public_folder: /img
 collections:
   - name: Project
     label: Project
-    folder: projects
+    folder: cms/projects
     create: true
     fields:
       - { name: title, label: Title }
