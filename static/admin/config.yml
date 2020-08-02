@@ -14,7 +14,8 @@ collections:
       - { name: title, label: Title }
       - { name: summary, label: Summary, widget: 'text' }
       - { name: description, label: Description, widget: 'text' }
-      - { name: url, label: URL }
+      - { name: url, label: Live URL }
+      - { name: codeUrl, label: Code URL }
       - {
           name: tech,
           label: Tech List,
