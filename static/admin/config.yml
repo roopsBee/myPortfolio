@@ -12,8 +12,8 @@ collections:
     create: true
     fields:
       - { name: title, label: Title }
-      - { name: summary, label: Summary, widget: 'text' }
-      - { name: description, label: Description, widget: 'text' }
+      - { name: summary, label: Summary - Card Front, widget: 'text' }
+      - { name: body, label: Full Description - Card Back, widget: 'markdown' }
       - { name: url, label: Live URL }
       - { name: codeUrl, label: Code URL }
       - {
