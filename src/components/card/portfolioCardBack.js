@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
-import { Button, Divider, Chip, Grid } from '@material-ui/core'
+import { Button, Divider, Chip, Grid, Link } from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import clsx from 'clsx'
 
@@ -66,8 +66,10 @@ const useStyles = makeStyles({
 export default function PortfolioCardBack({
   tech,
   title,
-  description,
+  descriptionHTML,
   flipCard,
+  url,
+  codeUrl,
 }) {
   const classes = useStyles()
 
@@ -77,7 +79,7 @@ export default function PortfolioCardBack({
 
   const techList = tech.map(tech => (
     <Grid item key={tech}>
-      <Chip label={tech} className={classes.chip} />
+      <Chip size="small" label={tech} className={classes.chip} />
     </Grid>
   ))
 
@@ -92,9 +94,12 @@ export default function PortfolioCardBack({
         >
           {title}
         </Typography>
-        <Typography variant="body2" color="textPrimary" component="p">
-          {description}
-        </Typography>
+        <Typography
+          variant="body2"
+          color="textPrimary"
+          component="p"
+          dangerouslySetInnerHTML={{ __html: descriptionHTML }}
+        ></Typography>
       </CardContent>
       <CardContent className={classes.tech}>
         <Divider variant="fullWidth" className={classes.divider} />
@@ -114,12 +119,18 @@ export default function PortfolioCardBack({
         <Button
           variant="contained"
           className={clsx(classes.button, classes.gitHubButton)}
+          component={Link}
+          href={codeUrl}
+          target="_blank"
         >
           <GitHubIcon />
         </Button>
         <Button
           variant="contained"
           className={clsx(classes.button, classes.demoButton)}
+          component={Link}
+          href={url}
+          target="_blank"
         >
           <PlayCircleFilledIcon />
         </Button>

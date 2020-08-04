@@ -12,11 +12,14 @@ import PageTransition from '../components/transitions/PageTransition'
 import pageTransitionStyles from '../components/transitions/pageTransitionStyles'
 import BioScene from '../components/bioScene/BioScene'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
     paddingTop: '2vh',
+    [theme.breakpoints.down('xs')]: {
+      padding: 0,
+    },
   },
-})
+}))
 
 const Portfolio = ({ transitionStatus }) => {
   const classes = useStyles()
@@ -26,12 +29,14 @@ const Portfolio = ({ transitionStatus }) => {
         edges {
           node {
             childMarkdownRemark {
+              html
               frontmatter {
-                summary
-                tech
                 title
-                description
                 url
+                tech
+                summary
+                codeUrl
+                alt
                 Image {
                   childImageSharp {
                     fluid {
@@ -49,13 +54,16 @@ const Portfolio = ({ transitionStatus }) => {
 
   const portfolioCards = data.allFile.edges.map(edge => {
     const {
-      summary,
       title,
-      description,
+      url,
       tech,
+      summary,
+      codeUrl,
+      alt,
       Image: imgData,
     } = edge.node.childMarkdownRemark.frontmatter
     const image = imgData.childImageSharp.fluid
+    const descriptionHTML = edge.node.childMarkdownRemark.html
 
     return (
       <Grid key={title} container item justify="center" xs={12} sm={6} md={4}>
@@ -63,16 +71,21 @@ const Portfolio = ({ transitionStatus }) => {
           CardFront={
             <PortfolioCardFront
               fluidImage={image}
+              imageAlt={alt}
               imageTitle={title}
               title={title}
               summary={summary}
+              url={url}
+              codeUrl={codeUrl}
             />
           }
           CardBack={
             <PortfolioCardBack
               tech={tech}
-              description={description}
+              descriptionHTML={descriptionHTML}
               title={title}
+              url={url}
+              codeUrl={codeUrl}
             />
           }
         />

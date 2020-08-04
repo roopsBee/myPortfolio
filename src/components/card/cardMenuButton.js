@@ -9,6 +9,8 @@ import ListItemText from '@material-ui/core/ListItemText'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
+import { Link } from '@material-ui/core'
+
 const useStyles = makeStyles({
   menuButton: {
     width: 0,
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function CardMenuButton({ handleInfoClick }) {
+export default function CardMenuButton({ handleInfoClick, url, codeUrl }) {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
 
@@ -59,13 +61,23 @@ export default function CardMenuButton({ handleInfoClick }) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={handleClose}
+          component={Link}
+          href={codeUrl}
+          target="_blank"
+        >
           <ListItemIcon>
             <GitHubIcon />
           </ListItemIcon>
           <ListItemText primary="VIEW CODE" />
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={handleClose}
+          component={Link}
+          href={url}
+          target="_blank"
+        >
           <ListItemIcon>
             <PlayCircleFilledIcon />
           </ListItemIcon>

@@ -36,9 +36,12 @@ const useStyles = makeStyles({
 export default function PortfolioCardFront({
   fluidImage,
   imageTitle,
+  imageAlt,
   title,
   summary,
   flipCard,
+  url,
+  codeUrl,
 }) {
   const classes = useStyles()
 
@@ -53,7 +56,7 @@ export default function PortfolioCardFront({
         component={Img}
         fluid={fluidImage}
         title={imageTitle}
-        alt="portfolio image"
+        alt={imageAlt}
       />
       <CardContent>
         <Typography
@@ -69,7 +72,11 @@ export default function PortfolioCardFront({
         </Typography>
       </CardContent>
       <CardActions className={classes.actions}>
-        <CardMenuButton handleInfoClick={handleInfoClick} />
+        <CardMenuButton
+          handleInfoClick={handleInfoClick}
+          url={url}
+          codeUrl={codeUrl}
+        />
       </CardActions>
     </Card>
   )
