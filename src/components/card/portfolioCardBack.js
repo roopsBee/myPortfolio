@@ -97,7 +97,7 @@ export default function PortfolioCardBack({
         <Typography
           variant="body2"
           color="textPrimary"
-          component="p"
+          component="div"
           dangerouslySetInnerHTML={{ __html: descriptionHTML }}
         ></Typography>
       </CardContent>
