@@ -11,13 +11,13 @@ import '../contact.css'
 const Contact = ({ transitionStatus }) => {
   return (
     <Layout>
+      <BioScene />
       <SEO title="Contact" />
       <PageTransition
         transitionStatus={transitionStatus}
         transitionStyles={pageTransitionStyles}
       >
         <ContactForm />
-        <BioScene />
       </PageTransition>
     </Layout>
   )

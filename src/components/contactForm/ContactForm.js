@@ -30,6 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     padding: 0,
+    zIndex: 10,
   },
 }))
 
