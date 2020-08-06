@@ -19,13 +19,13 @@ const useStyles = makeStyles({
     minWidth: 275,
     width: '100%',
     height: '100%',
+    minHeight: rect => rect.cardHeightBack,
     display: 'flex',
     flexDirection: 'column',
     zIndex: 1,
   },
   back: {
     position: 'absolute',
-    // height: 100,
     width: rect => rect.cardWidth,
     minHeight: rect => rect.cardHeight,
     zIndex: 0,
@@ -41,11 +41,13 @@ export default function FlipCard({ CardFront, CardBack }) {
 
   const classes = useStyles(rect)
   const cardRef = React.useRef()
+  const cardRefBack = React.useRef()
 
   React.useEffect(() => {
     setRect({
       cardHeight: cardRef.current.getClientRects()[0].height,
       cardWidth: cardRef.current.getClientRects()[0].width,
+      cardHeightBack: cardRefBack.current.getClientRects()[0].height,
     })
   }, [winWidth, winHeight])
 
@@ -80,6 +82,7 @@ export default function FlipCard({ CardFront, CardBack }) {
       <animated.div
         style={backStyles}
         className={clsx(classes.back, flipped && classes.flipped)}
+        ref={cardRefBack}
       >
         {React.cloneElement(CardBack, { flipCard: flipCard })}
       </animated.div>

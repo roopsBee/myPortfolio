@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, makeStyles } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
-import { makeStyles } from '@material-ui/core'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
@@ -11,6 +10,7 @@ import PortfolioCardFront from '../components/card/portfolioCardFront'
 import PageTransition from '../components/transitions/PageTransition'
 import pageTransitionStyles from '../components/transitions/pageTransitionStyles'
 import BioScene from '../components/bioScene/BioScene'
+import '../portfolio.css'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -66,7 +66,7 @@ const Portfolio = ({ transitionStatus }) => {
     const descriptionHTML = edge.node.childMarkdownRemark.html
 
     return (
-      <Grid key={title} container item justify="center" xs={12} sm={6} md={4}>
+      <Grid key={title} container item justify="center" sm={12} md={6} lg={4}>
         <FlipCard
           CardFront={
             <PortfolioCardFront
@@ -101,7 +101,7 @@ const Portfolio = ({ transitionStatus }) => {
         transitionStatus={transitionStatus}
       >
         <Container className={classes.container}>
-          <Grid container justify="center" spacing={2}>
+          <Grid container justify="center">
             {portfolioCards}
           </Grid>
         </Container>

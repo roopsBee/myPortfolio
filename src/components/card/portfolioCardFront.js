@@ -19,6 +19,7 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     border: '2px solid #f50057',
     backgroundColor: 'rgba(254,0,87,0.3)',
+    margin: 8,
   },
   button: {
     height: 40,
