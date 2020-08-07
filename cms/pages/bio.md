@@ -1,8 +1,23 @@
 ---
 title: My bio
 ---
-## **My bio yo**
+I'm a highly motivated and eager to learn, web developer.  
 
-Eget arcu dictum varius duis. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. At varius vel pharetra vel turpis nunc. In pellentesque massa placerat duis ultricies lacus sed. Aliquam purus sit amet luctus venenatis lectus magna. Proin sagittis nisl rhoncus mattis
+Specialising in front end development, with experience in back end technologies.
 
-Eget arcu dictum varius duis. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Ipsum suspendisse ultrices gravid***a dictum fusce ut placerat orci. At varius vel pharetra vel turpis nunc. In pellentesque massa placerat duis ultricies lacus sed. Aliquam purus sit amet luctus venenatis lectus magna. Proin sagittis nisl rhoncus mattis***
+Used technologies:
+
+* Reactjs
+* Nodejs
+* Material-UI
+* Netlify CMS
+* MongoDB
+* Express
+* Gatsby
+* HTML
+* Javascript
+* Threejs
+
+Currently open to new opportunities and challenges.
+
+Please [contact me here](https://www.roopeshpatel.com/contact/).
