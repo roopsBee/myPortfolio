@@ -25,9 +25,9 @@ const useStyles = makeStyles({
   loader: {
     position: 'absolute',
     zIndex: 10,
-    width: '50%',
+    width: '30%',
     marginTop: '50vh',
-    marginLeft: '25vw',
+    marginLeft: '35vw',
   },
 })
 
