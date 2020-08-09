@@ -34,3 +34,9 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: My bio, name: body, widget: markdown }
+          - {
+              name: tech,
+              label: Techs used list,
+              widget: 'list',
+              hint: 'Comma seperated list',
+            }
