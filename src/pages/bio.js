@@ -16,12 +16,13 @@ const Bio = ({ transitionStatus }) => {
           html
           frontmatter {
             title
+            tech
           }
         }
       }
     }
   `)
-  const bioTitle = data.file.childMarkdownRemark.frontmatter.title
+  const { title, tech } = data.file.childMarkdownRemark.frontmatter
   const bioHTML = data.file.childMarkdownRemark.html
 
   return (
@@ -32,7 +33,7 @@ const Bio = ({ transitionStatus }) => {
           transitionStatus={transitionStatus}
           transitionStyles={pageTransitionStyles}
         >
-          <BioOverlay title={bioTitle} html={bioHTML} />
+          <BioOverlay title={title} html={bioHTML} tech={tech} />
           <SEO title="Bio" />
         </PageTransition>
       </Layout>
