@@ -1,4 +1,4 @@
 Todo
 
-- google analytics
-- add accessibility
+- add google analytics
+- improve accessibility

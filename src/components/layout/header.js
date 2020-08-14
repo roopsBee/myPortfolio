@@ -44,13 +44,13 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <div className={classes.root}>
+    <header className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" elevation={0} className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
-            aria-label="Open drawer"
+            aria-label="Open nav drawer"
             onClick={handleDrawerToggle}
             edge="start"
             className={classes.menuButton}
@@ -83,7 +83,7 @@ const Header = ({ siteTitle }) => {
           handleListItemClick={handleDrawerToggle}
         />
       </SwipeableDrawer>
-    </div>
+    </header>
   )
 }
 
