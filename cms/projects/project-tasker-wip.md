@@ -13,7 +13,7 @@ tech:
   - Material-UI
   - Serverless functions
   - Redux toolkit
-Image: /img/projecttracker.png
+Image: /img/projecttracker2.png
 alt: Image of Project tasker project page
 ---
 
