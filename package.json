@@ -38,7 +38,7 @@
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^4.2.10",
     "react-use-gesture": "^7.0.15",
-    "three": "^0.128.0",
+    "three": "^0.137.0",
     "typeface-roboto": "0.0.54",
     "yup": "^0.29.1"
   },
